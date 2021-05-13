@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>AJAX</title>
+</head>
+<body>
+	<center>
+		<h1>Metodo Get</h1>
+		
+	</center>
+			<input type="text" id="valor1">
+			<input type="text" id="valor2">
+			<input type="submit" value="Sumar" id="ejecutar">
+			<h3 id="resultado">aqui</h3>
+		
+	<script src="js/jquery.min.js"></script>
+	<script>
+		
+		$(function(){
+			console.log('entrando al pr');
+			$('#ejecutar').click(function(){
+				sumar($('#valor1').val(),$('#valor2').val());
+				console.log("clickeado");
+			});
+
+			function sumar(val1,val2){
+				var parametros = {
+					"val1": val1,
+					"val2": val2
+				}
+				console.log("entrando");
+				$.ajax({
+					type:"POST",
+					url:"suma.php",
+					data:{
+					"val1": val1,
+					"val2": val2
+				},
+					beforeSend: function(){
+						console.log("Se esta procesando tu peticion");
+					}
+				})
+				.done(function(data){
+					$('#resultado').text(data);
+				});
+			}
+
+			/*$.get('ejemplo.php',{nombre: "Juan Manuel"},function(data){
+				$('#resultado').text(data);
+			});
+*/
+		});
+</script>
+</body>
+</html>

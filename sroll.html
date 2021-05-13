@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>scroll</title>
+</head>
+<body style="height: 1500px">
+	<center>
+		<h1>Hola codigo de prueba Juan Manuel</h1>
+		<button style="margin-top: 1400px" id="up">UP</button>
+	</center>
+	<script src="js/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+	<script>
+		//eventos del scroll
+		$(function(){
+			$('#up').click(function(){
+				$('body, html').animate({scrollTop:0},'1000');
+			});
+
+
+		/*$(function(){
+			$(window).scroll(function(){
+				if($(this).scrollTop() > 100){
+					console.log('hola scroll');
+				}else{
+					console.log('no scroll');
+				}
+			});
+
+		});*/
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>JSON</title>
+</head>
+<body>
+	<center>
+		<h1>Get JSON</h1>
+		<input type="submit" value="ejecutar" id="ejecutar" name="">
+		<input type="submit" value="probar" id="ejecutar1" name="">
+	</center>
+	<script src="js/jquery.min.js"></script>
+
+	<script>
+		$(function(){
+			$('#ejecutar').click(function(){
+				console.log("presionado");
+				$.getJSON('ejemplo.php',{
+					nombre:"Juan",
+					metodo:"Get"
+				}, function(data){
+					$.each(data,function(i,value){
+						//console.log(i+" "+value);
+						alert(i);
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>
+

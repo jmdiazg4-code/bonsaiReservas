@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Curso Jquery</title>
+</head>
+<body>
+	<center>
+		<h1><i class="fas fa-volume-up" id="icon"></i></h1>
+		<ul id="colors">
+			<li>Orange</li>
+			<li>Purple</li>
+			<li>White</li>
+		</ul>
+		<button id="btn1">Aumentar</button>
+		<button id="btn2">Reducir</button>
+	</center>
+	
+	<!--<h1 class="saludo">Hola codigo facilito</h1>
+	<p id ="parrafo">Saludos a todos</p>
+	<img id="coco"src="img/coco.jpg" width="400" alt="">
+	
+	<input type="text" id="input">
+	<label for="">Numero de presiones <span>0</span></label>
+	<p>Paso por aca</p>
+	<div>:3 :)</div>-->
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+	<i class="fas fa-volume-off"></i>
+
+	
+	<script>
+		$(function(){
+
+			//metodo Data
+
+			$('#colors li').each(function(index,value){
+				$('#colors').data('nombre',index);
+				console.log($('#colors').data('nombre'));
+
+			});
+			$('#icon').data('atrib', {nombre:'fas fa-volume-off',color: 'red'});
+			var icon = $('#icon').data('atrib');
+			console.log(icon.nombre);
+
+			//$('#icon').mousedown(function(){
+			$('#btn2').click(function(){
+				$('#icon').removeClass('fas fa-volume-up').addClass(icon.nombre);
+				$('#icon').css('color',icon.color);
+			});
+			//$('#icon').mouseup(function()
+			$('#btn1').click(function(){
+				$('#icon').removeClass(icon.nombre).addClass('fas fa-volume-up');
+				$('#icon').css('color','black');
+			});
+
+		});
+
+			//Eventos de mouse
+			/*$('#icon').mousedown(function(){
+				$('#icon').addClass("fas fa-volume-off").removeClass("fas fa-volume-up");
+			});
+			$('#icon').mouseup(function(){
+				$('#icon').addClass("fas fa-volume-up").removeClass("fas fa-volume-off");
+			});
+			//Eventos de Teclado
+			$('#input').keydown(function(){
+				$("#input").css({"background-color":"green"});
+			});
+			var i=0;
+			$('#input').keypress(function(){
+				$("span").text(i += 1)
+			});
+			$('#input').keyup(function(){
+				$("#input").css({"background-color":"white"});
+			});
+
+
+			//Efectos
+			$('#btn1').click(function(){
+				//$('#coco').slideDown(3000);
+				//$('#coco').fadeIn(3000);
+				$('#coco').animate({height: "900px"}, 3000);
+			});
+			$('#btn2').click(function(){
+				//$('#coco').slideUp(3000);
+				//$('#coco').fadeOut(2000);
+				$('#coco').animate({width: "920px"},3000);
+
+			});
+
+			//Dimensiones
+			$('#coco').click(function(){
+				var h = $('#coco').height();
+				alert(h);
+				var hn=$('#coco').height(400);
+				alert(hn);
+
+			});
+
+
+			//Metodo attr
+			$('#coco').click(function(){
+				//$('#coco').attr('width',300)
+				$('#coco').attr('src','img/cf.png');
+
+			});
+
+			//Iterar elementos con for of
+			//objetos
+			var colors = [{'colors':[{'colorName':'red','hexValue':'#f00'},
+			{'colorName':'green','hexValue':'#0f0'},
+			{'colorName':'blue','hexValue':'#00f'}]
+		}];
+			for(let color of colors){
+				console.log(color.colors[2].colorName);
+			}
+
+
+
+			//Iterar elementos
+			var numbers = [1,2,3,4,5,6,7,8,9];
+			//$.each(numbers, function(i,value){
+			//	console.log(i+":"+value);
+			//});
+			console.log('Tamaño del arreglo: '+numbers.length);
+			for(var i = 0; i<numbers.length; i++){
+				console.log(numbers[i]);
+			}*/
+
+
+
+			//getters setters
+			//var s = $('.saludo').html();
+			//alert(s);
+			//var s = $('h1').attr('id','hola');
+			//alert(s);
+			//metodo css
+			/*$('p').css({'background-color':'red', 'text-align': 'center'});*/
+			//CLASES CSS HASCLASS ADDCLASS REMOVE CLASS
+
+			/*$('#parrafo').css({'background-color':'red', 'text-align': 'center'});
+			
+			if($("#parrafo").hasClass("saludo")) {
+				alert("si tiene la clase saludo");
+				$("#parrafo").removeClass("saludo");
+			}
+			else{
+				alert('no tiene la clase saludo');
+				$('div').addClass('hola')
+			}
+
+			//show and hide
+			$('.saludo').css({'background-color':'red', 'text-align': 'center'});
+			
+			if($("#parrafo").hasClass("saludo")) {
+				alert("si tiene la clase saludo");
+				$("#parrafo").show(3000);
+			}
+			else{
+				alert('no tiene la clase saludo');
+				$('div').hide(3000);
+			}
+*/
+
+		
+	</script>
+</body>
+</html>

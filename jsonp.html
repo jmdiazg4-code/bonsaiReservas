@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>scroll</title>
+</head>
+<body>
+	<center>
+		<h1>JSON.Parse</h1>
+	</center>
+	<script src="js/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+	<script>
+		
+		$(function(){
+			var cad = '{"name":"Luis","lastname":"Diaz"}';
+			var obj = JSON.parse(cad);
+			console.log(obj.name+" "+obj.lastname);
+			console.log(obj.edad);
+		});
+	</script>
+</body>
+</html>

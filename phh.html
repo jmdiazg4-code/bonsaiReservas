@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>scroll</title>
+</head>
+<body style="height: 1500px">
+	<center>
+		<h1>Hola codigo de prueba Juan Manuel</h1>
+		<ol id="padre-ol">
+			<li>Elemento 1</li>
+			<li class="hijo">Elemento 2</li>
+			<li>Elemento 3</li>
+			<li>Elemento 4</li>
+		</ol>
+		<button id="exe">Ejecutar</button>
+	</center>
+	<script src="js/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+	<script>
+		$(function(){
+			var hijos = $('#padre-ol').children().text();
+			var padre = $('.hijo').parent();
+			var hermanos = $('.hijo').siblings().text();
+			console.log(hijos);
+			console.log(padre);
+			console.log(hermanos);
+
+			$('#exe').click(function(){
+				var li = $('<li>',{text: 'Virtual Element'});
+				$(li).addClass('vElem');
+				$('#padre-ol').append(li);
+				$('.vElem').click(function(){
+					alert("Este es un elemnto  virtual")
+
+				});
+			});
+		});
+	</script>
+</body>
+</html>

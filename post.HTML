@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>post</title>
+</head>
+<body>
+	<center>
+		<h1>Metodo Post</h1>
+		<input type="submit" value="Ejecutar" id="ejecutar">
+	</center>
+	<h3 id="resultado"></h3>
+	<script src="js/jquery.min.js"></script>
+
+	<script>
+		$(function(){
+			$('#ejecutar').click(function(){
+				$.post('ejemplo.php',{
+					nombre: "Juan",
+					metodo: "post"
+				},function(data,status){
+					console.log(data+" "+status);
+				});
+
+			});
+		});
+	</script>
